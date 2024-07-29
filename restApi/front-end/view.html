@@ -8,6 +8,16 @@
         body {
             background-color: white;
             text-align: center;
+            justify-content: space-around; / *  Расположение в ряд с отступами  * /
+        align-items: flex-start; / *  Выравнивание по верхнему краю  * /
+        margin: 20px;
+        }
+        body1 {
+            display: flex;
+            justify-content: space-around; / *  Расположение в ряд с отступами  * /
+        align-items: flex-start; / *  Выравнивание по верхнему краю  * /
+        margin: 20px;
+            color: deepskyblue;
         }
         h1 {
             color: pink;
@@ -16,17 +26,119 @@
             margin: 10px;
             padding: 10px 20px;
             font-size: 18px;
+            color: deepskyblue;
+        }
+        .container {
+            /*margin: auto;*/
+            text-align: center; / *  Центрирование текста  * /
+        }
+        .containerX {
+            margin: 10px;
+            text-align: center; / *  Центрирование текста  * /
+        }
+        .containerY {
+            margin-left: 200px;
+            text-align: center; / *  Центрирование текста  * /
+        }
+        .containerD {
+            margin: 166px 0.5px;
+            text-align: right;
+        }
+        .containerB {
+            margin: 170px 0px;
+            text-align: left;
+        }
+        input {
+            padding: 5px; / *  Отступ внутри текстового поля  * /
+        margin-bottom: 10px; / *  Отступ между текстовым полем и кнопкой  * /
+        color: lightskyblue;
+        }
+        .label {
+            font-size: 30px;
+            color: lightpink;
+            margin: -4px;
+        }
+        .labelX {
+            font-size: 18px;
+            color: lightskyblue;
+            margin: 5px -3px;
+        }
+        .labelY {
+            font-size: 18px;
+            color: lightskyblue;
+            margin: -179.5px 4px;
+        }
+        .labelB {
+            font-size: 18px;
+            color: lightskyblue;
+            margin: -179.5px 4px;
         }
     </style>
 </head>
 <body>
-
-<h1>GoodbuyWorldMX</h1>
-
-<button onclick="location.href='/plug'">PUT</button>
-<button onclick="location.href='/get'; showList()">GET</button>
-<button onclick="location.href='/plug'">POST</button>
-<button onclick="location.href='/plug'">DELETE</button>
-
+<h1>REST-API</h1>
+<body1>
+    <div class="container">
+        <form action="/edit" method="post">
+            <div class="label">Изменить/Добавить по ID</div>
+            <div class="containerX">
+                <div class="label"><input type="number" name="edit_ID" placeholder="Введите ID"></div>
+                <div class="label"><input type="text" name="edit_Name" placeholder="Введите название"></div>
+                <div class="label"><input type="text" name="edit_Deadline" placeholder="Введите дедлайн"></div>
+                <div class="label"><input type="text" name="edit_Info" placeholder="Введите описание"></div>
+                <div class="labelX"><label for="courses">Select priority</label>
+                    <select id="courses" name="priority">
+                        <option value="low">low</option>
+                        <option value="normal">normal</option>
+                        <option value="major">major</option>
+                        <option value="critical">critical</option>
+                    </select>
+                </div>
+            </div>
+            <div class="containerY">
+                <div class="labelY"><button type="submit">Изменить</button></div>
+            </div>
+            <div class="containerD">
+                <div class="labelY"><button type="submit">Добавить</button></div>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <form action="/post" method="post">
+        <div class="label">Добавить</div>
+            <label>
+                <input type="number" name="task_numb" placeholder="Введите число задач">
+            </label>
+            <button type="submit">Добавить</button>
+            <div style="margin: 0 -150px 1px -148px;">
+            </div>
+        </form>
+        <form action="/editStatus" method="post">
+        <div class="label">Изменить статус задачи</div>
+            <label>
+                <input type="number" name="IdChangeStatus" placeholder="Введите ID задачи">
+            </label>
+            <button type="submit">Изменить</button>
+            <div class="containerB">
+                <div class="labelB"><label for="cours">Select status</label>
+                    <select id="cours" name="edit_Status">
+                        <option value="backlog">backlog</option>
+                        <option value="in progress">progress</option>
+                        <option value="done">done</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <div class="label">Удалить по ID</div>
+        <form action="/delete" method="post">
+            <label>
+                <input type="number" name="task_ID" placeholder="введите ID задачи">
+            </label>
+            <button type="submit">Удалить</button>
+        </form>
+    </div>
+</body1>
 </body>
 </html>

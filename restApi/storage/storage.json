@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0,
+        "name_numb": "Task X",
+        "deadline": "30 July 2024",
+        "info": "Доделать REST-API",
+        "status": "in progress",
+        "priority": "low"
+    },
+    {
+        "id": 1,
+        "name_numb": "Task 1",
+        "deadline": "30 July 2024",
+        "info": "Nothing",
+        "status": "Not done",
+        "priority": "High"
+    }
+]
