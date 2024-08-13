@@ -1,17 +1,17 @@
-package fileWork
+// package fileWork
 
-import "os"
+// import "os"
 
-func parsing() {
-	file, err := os.Open("C:\\Users\\tberendeev\\Desktop\\forJson\\TEST.json")
-	if err != nil {
-		panic(err)
-	}
-	defer func(file *os.File) {
-		err := file.Close()
-		if err != nil {
-			panic(err)
-		}
-	}(file)
+// func parsing() {
+// 	file, err := os.Open("C:\\Users\\\\Desktop\\forJson\\TEST.json")
+// 	if err != nil {
+// 		panic(err)
+// 	}
+// 	defer func(file *os.File) {
+// 		err := file.Close()
+// 		if err != nil {
+// 			panic(err)
+// 		}
+// 	}(file)
 
-}
+// }
